@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: basic-spring-boot
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: basic-spring-boot
+    app.kubernetes.io/part-of: red-tiger
+  name: basic-spring-boot
+  namespace: pdave
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: basic-spring-boot
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: basic-spring-boot
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:pdave-basic-spring-boot
+        imagePullPolicy: Always
+        name: container-image
+        resources: {}
+status: {}
