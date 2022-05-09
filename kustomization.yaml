@@ -1,4 +1,5 @@
 bases:
+- components/basic-node-js/base
 - components/basic-spring-boot/base
 resources:
 - common-storage-pvc.yaml
